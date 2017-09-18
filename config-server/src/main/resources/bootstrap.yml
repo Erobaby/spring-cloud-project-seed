@@ -1,0 +1,17 @@
+profiles: dev
+server:
+  port: 8101
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Erobaby/config-spring-cloud-project-seed/
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/

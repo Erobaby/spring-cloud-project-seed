@@ -1,0 +1,17 @@
+profiles: dev
+server:
+  port: 9001
+spring:
+  application:
+    name: hello-microservice
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8101/
+      profile: ${spring.profiles.active}
+      label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
